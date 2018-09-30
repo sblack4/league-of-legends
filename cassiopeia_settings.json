@@ -1,0 +1,16 @@
+{
+    "pipeline": {
+        "Cache": {},
+
+        "SimpleKVDiskStore": {
+        "package": "cassiopeia_diskstore",
+        "path": "/Users/DV79FN/Git/league-of-legends/data"
+        },
+
+        "DDragon": {},
+
+        "RiotAPI": {
+        "api_key": "RGAPI-77619554-7949-4393-be68-5e643092e8b4"
+        }
+    }
+}
