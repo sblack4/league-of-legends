@@ -51,13 +51,40 @@ def frame_to_json(frame, data_folder_name):
     with open(data_folder_name + "/" + file_name, 'w') as fh:
         fh.write(json_frame)
 
+def frames_to_csv(frames, frame_writer):
+        for pframe in participantFrames:
+            if not pframe: 
+                continue
+            try: 
+                pos_x = pframe['position']['x']
+                pos_y = pframe['position']['y']
+            except:
+                pos_x = 0
+                pos_y = 0
+            row = [faker_last_match_id, timestamp, pos_x, pos_y]
+            columns = [
+                'creepScore',
+                'currentGold',
+                'dominionScore',
+                'experience',
+                'goldEarned',
+                'level',
+                'neutralMinionsKilled',
+                'participantId',
+                'teamScore'
+            ] 
+            for col in columns:
+                row.append(pframe[col])
+            
+            print(row)
 
+            frame_writer.writerow(row)
 
 if __name__ == "__main__":
     # go to 
     # and reset API key
     # then CTRL+C CTRL+V it below 
-    riot_api_key = "RGAPI-77619554-7949-4393-be68-5e643092e8b4"
+    riot_api_key = "RGAPI-be24c931-c3de-4b28-97b4-8ac072075221"
     
     config = cass.get_default_config()
     cass.apply_settings(config)
@@ -73,20 +100,23 @@ if __name__ == "__main__":
                   region=summoner.region)
          )
     
-    # 
-    # get Faker's match history his last match
-    faker_match_history = summoner.match_history
-    print("His match history is length: {}".format(len(faker_match_history)))
+    # # 
+    # # get Faker's match history his last match
+    # faker_match_history = summoner.match_history
+    # print("His match history is length: {}".format(len(faker_match_history)))
     
-    faker_last_match_id = faker_match_history[0].id
+    # faker_last_match_id = faker_match_history[0].id
+
+    faker_last_match_id = 50068799
     faker_last_match = cass.get_match(faker_last_match_id)
     
     
     last_match_timeline = faker_last_match.timeline
-    print("last match frames: {}".format(len(last_match_timeline.frames)))
+    last_match_frames = last_match_timeline.frames
+
+    print("last match frames: {}".format(len(last_match_frames)))
     print("match length: {}".format(faker_last_match.duration))
     
-    last_match_frames = last_match_timeline.frames
     
     # make a data folder 
     data_folder_name = "data"
@@ -96,6 +126,16 @@ if __name__ == "__main__":
     if not path.isdir(full_path):
         mkdir(full_path)
     
+    timestamp = last_match_frames[0].timestamp
+    print("Timestamp {}".format(timestamp))
+    file_name = "{}-{}".format(faker_last_match_id, timestamp)
+
     # write data out to files 
     for frame in last_match_frames:
-        frame_to_csv(frame, data_folder_name)
+        with open(data_folder_name + "/" + file_name + ".csv", 'w+') as csvfile:
+            frame_writer = csv.writer(csvfile)
+            header = "matchId, timestamp, positionX, positionY, creepScore, currentGold, dominionScore, experience, goldEarned, level, neutralMinionsKilled, participantId, teamScore"
+            header = [word for word in header.replace(',', '').split(' ')]
+            frame_writer.writerow(header)
+            participantFrames = [value.to_dict() for key, value in frame.participant_frames.items()]
+            frames_to_csv(participantFrames, frame_writer)
