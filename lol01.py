@@ -54,19 +54,55 @@ print("match length: {}".format(faker_last_match.duration))
 last_match_frames = last_match_timeline.frames
 
 # make a data folder 
-from os import direxists, path, getcwd, mkdir
+from os import path, getcwd, mkdir
 data_folder_name = "data"
 pwd = getcwd()
 full_path = path.join(pwd, data_folder_name)
-if not direxists(full_path):
+if not path.isdir(full_path):
     mkdir(full_path)
 
 # write data out to files 
 for frame in last_match_frames:
     timestamp = frame.timestamp
     print("Timestamp {}".format(timestamp))
-    json_frame = frame.to_json()
-    print(json_frame)
-    file_name = "{}-{}.json".format(faker_last_match_id, timestamp)
-    with open(file_name, 'w') as fh:
-        fh.write(json_frame)
+    file_name = "{}-{}".format(faker_last_match_id, timestamp)
+
+    # # write to json 
+    # json_frame = frame.to_json()
+    # print(json_frame)
+    # with open(file_name, 'w') as fh:
+    #     fh.write(json_frame)
+
+    # # write to CSV 
+    import csv 
+    with open(data_folder_name + "/" + file_name + ".csv", 'w+') as csvfile:
+        frame_writer = csv.writer(csvfile)
+        header = "matchId, timestamp, positionX, positionY, creepScore, currentGold, dominionScore, experience, goldEarned, level, neutralMinionsKilled, participantId, teamScore"
+        header = [word for word in header.replace(',', '').split(' ')]
+        frame_writer.writerow(header)
+        participantFrames = [value.to_dict() for key, value in frame.participant_frames.items()]
+        for pframe in participantFrames:
+            try: 
+                pos_x = pframe['position']['x']
+                pos_y = pframe['position']['y']
+            except:
+                pos_x = 0
+                pos_y = 0
+            row = [faker_last_match_id, timestamp, pos_x, pos_y]
+            columns = [
+                'creepScore',
+                'currentGold',
+                'dominionScore',
+                'experience',
+                'goldEarned',
+                'level',
+                'neutralMinionsKilled',
+                'participantId',
+                'teamScore'
+            ] 
+            for col in columns:
+                row.append(pframe[col])
+            
+            print(row)
+
+            frame_writer.writerow(row)
