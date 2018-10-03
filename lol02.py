@@ -63,6 +63,13 @@ if not path.isdir(full_path):
 
 file_name = "{}-{}".format(faker_last_match_id, "timeline")
 
+with open(data_folder_name + "/" + file_name + ".json", "w+") as fh:
+    fh.write(faker_last_match.to_json())
+
+from sys import exit
+exit(0)
+
+
 # # write to CSV 
 import csv 
 with open(data_folder_name + "/" + file_name + ".csv", 'w+') as csvfile:
