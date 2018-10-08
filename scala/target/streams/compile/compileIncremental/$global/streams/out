@@ -1,0 +1,27 @@
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial source changes: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	removed:Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(/Users/DV79FN/Git/league-of-legends/scala/src/main/scala/app.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(lolplay.App)[0m
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll sources are invalidated.[0m
+[0m[[0m[0mdebug[0m] [0m[0mRecompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 1 Scala source to /Users/DV79FN/Git/league-of-legends/scala/target/scala-2.11/classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.11:1.2.1:compile for Scala 2.11.8[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.11:1.2.1:compile for Scala 2.11.8[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 54406889 for Scala compiler version 2.11.8[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/jre/classes:/Users/DV79FN/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Users/DV79FN/Git/league-of-legends/scala/target/scala-2.11/classes:/Users/DV79FN/.ivy2/cache/com.merakianalytics.orianna/orianna/jars/orianna-3.0.4.jar:/Users/DV79FN/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/Users/DV79FN/.ivy2/cache/com.merakianalytics.datapipelines/datapipelines/jars/datapipelines-1.0.2.jar:/Users/DV79FN/.ivy2/cache/es.usc.citius.hipster/hipster-core/jars/hipster-core-1.0.1.jar:/Users/DV79FN/.ivy2/cache/com.google.guava/guava/bundles/guava-20.0.jar:/Users/DV79FN/.ivy2/cache/com.squareup.okhttp3/okhttp/jars/okhttp-3.10.0.jar:/Users/DV79FN/.ivy2/cache/com.squareup.okio/okio/jars/okio-1.14.0.jar:/Users/DV79FN/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.9.6.jar:/Users/DV79FN/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.9.0.jar:/Users/DV79FN/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.9.6.jar:/Users/DV79FN/.ivy2/cache/org.msgpack/jackson-dataformat-msgpack/jars/jackson-dataformat-msgpack-0.8.16.jar:/Users/DV79FN/.ivy2/cache/org.msgpack/msgpack-core/jars/msgpack-core-0.8.16.jar:/Users/DV79FN/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.10.jar:/Users/DV79FN/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-joda/bundles/jackson-datatype-joda-2.9.6.jar:/Users/DV79FN/.ivy2/cache/org.cache2k/cache2k-core/jars/cache2k-core-1.0.2.Final.jar:/Users/DV79FN/.ivy2/cache/org.cache2k/cache2k-api/jars/cache2k-api-1.0.2.Final.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 0.431472241 s[0m
+[0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m

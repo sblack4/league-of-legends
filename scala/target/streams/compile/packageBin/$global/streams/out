@@ -1,0 +1,11 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /Users/DV79FN/Git/league-of-legends/scala/target/scala-2.11/lol-play_2.11-0.01.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lolplay[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/DV79FN/Git/league-of-legends/scala/target/scala-2.11/classes/lolplay[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lolplay/App$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/DV79FN/Git/league-of-legends/scala/target/scala-2.11/classes/lolplay/App$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lolplay/App$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/DV79FN/Git/league-of-legends/scala/target/scala-2.11/classes/lolplay/App$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lolplay/App.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/DV79FN/Git/league-of-legends/scala/target/scala-2.11/classes/lolplay/App.class[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
