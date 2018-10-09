@@ -3,3 +3,4 @@ compile
 ~ compile 
 package
 run
+exit

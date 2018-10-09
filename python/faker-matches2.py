@@ -90,7 +90,7 @@ def tryone():
 if __name__ == "__main__":
     """
     """
-    riot_api_key = "RGAPI-2f774048-8d86-4c98-a317-5230f8b1b898"
+    riot_api_key = "RGAPI-eed927d5-06d3-4eac-b4ac-f243bd421004"
     api = Riot(riot_api_key)
 
     faker = api.getSummonerByName("Faker")
