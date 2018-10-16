@@ -4,9 +4,8 @@ data we want:
 
 
 """
-import logging
+
 import json
-from src.tools import make_data_folder
 from src.riot import Riot
 import csv
 
@@ -90,7 +89,7 @@ def tryone():
 if __name__ == "__main__":
     """
     """
-    riot_api_key = "RGAPI-2f774048-8d86-4c98-a317-5230f8b1b898"
+    riot_api_key = "RGAPI-9d4bf446-9a91-46d6-aa18-1e7aae10e366"
     api = Riot(riot_api_key)
 
     faker = api.getSummonerByName("Faker")
@@ -104,6 +103,11 @@ if __name__ == "__main__":
     for match in match_list:
         match_id = match["gameId"]
         match_json = api.getMatch(match_id)
+
+        try:
+            match_json["participants"]
+        except: 
+            continue
 
         for participant in match_json["participants"]:
             stats = participant["stats"]

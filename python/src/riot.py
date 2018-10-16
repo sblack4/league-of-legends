@@ -1,7 +1,5 @@
 import json
 import requests
-import typing
-
 
 class Riot:
     def __init__(self, api_key):
