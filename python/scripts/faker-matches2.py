@@ -4,9 +4,8 @@ data we want:
 
 
 """
-import logging
+
 import json
-from src.tools import make_data_folder
 from src.riot import Riot
 import csv
 
@@ -104,6 +103,11 @@ if __name__ == "__main__":
     for match in match_list:
         match_id = match["gameId"]
         match_json = api.getMatch(match_id)
+
+        try:
+            match_json["participants"]
+        except: 
+            continue
 
         for participant in match_json["participants"]:
             stats = participant["stats"]
