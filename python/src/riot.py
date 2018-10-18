@@ -11,7 +11,8 @@ class Riot:
         self.routes = {
             "matches": "/lol/match/v3/matches",
             "summoners/by-name": "/lol/summoner/v3/summoners/by-name",
-            "matchlist": "/lol/match/v3/matchlists/by-account"
+            "matchlist": "/lol/match/v3/matchlists/by-account",
+            "featuredMatches": "/lol/spectator/v3/featured-games"
         }
 
     def getUrl(self, endpoint, arg):
@@ -30,9 +31,22 @@ class Riot:
         response = requests.get(url)
         return response.json()
 
+    def getFeaturedMatches(self):
+        url = self.url_base + self.routes["featuredMatches"] + self.api_arg
+        response = requests.get(url)
+        return response.json()
+
 
 if __name__ == "__main__":
-    key = "RGAPI-2f774048-8d86-4c98-a317-5230f8b1b898"
+    key = "RGAPI-ac8d4e31-c857-4429-8615-db61b14cbb66"
     api = Riot(key)
-    match = api.getMatch("2842707542")
-    print(match)
+
+    seed_act_id =
+
+    featured_matches = api.getMatchList(seed_act_id)
+    for match in featured_matches["gameList"]:
+        match_id = match['gameId']
+        match = api.getMatch(match_id)
+        fh = open(str(match_id) + ".json", 'w+')
+        fh.write(json.dumps(match, indent=2))
+        fh.close()
